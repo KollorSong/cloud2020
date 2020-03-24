@@ -1,0 +1,15 @@
+server:
+  port: 7001
+
+eureka:
+  instance:
+    hostname: eureka7001.com #服务端注册实例
+  client:
+    allow-redirects:  false #不向容器注册自己
+    fetch-registry: false #表示自己就是注册中心，指责就是维护服务实例，并不检索服务
+    service-url:
+      #defaultZone: http://eureka7002.com:7002/eureka/  #设置eureka server 交互的地址查询服务和注册服务，都需要这个地址
+      defaultZone: http://eureka7001.com:7001/eureka/   #单机版测试
+  server:
+    enable-self-preservation: true  #关闭自我保护机制（即：服务宕机以后，注册中心仍然保留服务的注册信息）
+    a-s-g-update-interval-ms: 2000  #自我保护机制动作时间
