@@ -83,5 +83,8 @@ public class PayController {
 
     }
 
-
+    @GetMapping("/payment/lb")
+    public CommonResult<String> testLb(){
+        return new CommonResult(200,port);
+    }
 }

@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 public class Myconfig {
 
     @Bean
-    @LoadBalanced  //负载均衡，默认为轮询
+    //@LoadBalanced  //负载均衡，默认为轮询
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }
